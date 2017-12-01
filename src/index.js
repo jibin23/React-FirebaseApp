@@ -12,19 +12,21 @@ import './css/style.css';
 
 import App from './components/App';
 import StorePicker from './components/StorePicker';
+import NotFound from './components/NotFound';
 
 // React Router
 const Root = () =>{
     return(
         <BrowserRouter>
-            //when at home -> StorePicker
-            <Match exactly pattern="/" component={StorePicker}>
-            </Match>
+            <div>
+                <Match exactly pattern="/" component={StorePicker}/>
+                <Match pattern="/store/:storeId" component={App}/>
+                <Miss component={NotFound} />
+            </div>
         </BrowserRouter>
     )
 }
 
-
-render(<App/>, document.querySelector('#main'));
+render(<Root/>, document.querySelector('#main'));
 
 
