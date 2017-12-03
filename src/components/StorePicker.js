@@ -26,8 +26,6 @@ class StorePicker extends React.Component {
 
     // this works here
     render() {
-        {/* This is a JSX comment */}
-        {/* Comment cannot be put in the JSX return, above the element*/}
         return (
             <form className="store-selector" onSubmit={this.goToStore.bind(this)}>
 
